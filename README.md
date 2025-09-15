@@ -1,71 +1,45 @@
-# React-shop-cloudfront
+# 🚀 Task 2.1
 
-This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
+## 📦 Manual Deployment
 
-- [Vite](https://vitejs.dev/) as a project bundler
-- [React](https://beta.reactjs.org/) as a frontend framework
-- [React-router-dom](https://reactrouterdotcom.fly.dev/) as a routing library
-- [MUI](https://mui.com/) as a UI framework
-- [React-query](https://react-query-v3.tanstack.com/) as a data fetching library
-- [Formik](https://formik.org/) as a form library
-- [Yup](https://github.com/jquense/yup) as a validation schema
-- [Serverless](https://serverless.com/) as a serverless framework
-- [Vitest](https://vitest.dev/) as a test runner
-- [MSW](https://mswjs.io/) as an API mocking library
-- [Eslint](https://eslint.org/) as a code linting tool
-- [Prettier](https://prettier.io/) as a code formatting tool
-- [TypeScript](https://www.typescriptlang.org/) as a type checking tool
+> **Private S3 Deployment URL**  
+> _(Requires access via CloudFront)_
 
-## Available Scripts
+🔗 [https://d2xxyi4mwb6is6.cloudfront.net/](https://d2xxyi4mwb6is6.cloudfront.net/)
 
-### `start`
+---
 
-Starts the project in dev mode with mocked API on local environment.
+# ⚡ Task 2.2
 
-### `build`
+## 🤖 Automated Deployment
 
-Builds the project for production in `dist` folder.
+> **Deployed CloudFront URL**
 
-### `preview`
+🔗 [https://d1baeafe5g0fnf.cloudfront.net](https://d1baeafe5g0fnf.cloudfront.net)
 
-Starts the project in production mode on local environment.
+## 🛠️ Scripts & Deployment
 
-### `test`, `test:ui`, `test:coverage`
+### 🚀 Build and Deploy
 
-Runs tests in console, in browser or with coverage.
+To build and deploy the frontend and infrastructure:
 
-### `lint`, `prettier`
+1. Open a terminal in the `infra` directory.
+2. Run:
 
-Runs linting and formatting for all files in `src` folder.
+   ```sh
+   npm run deploy
+   ```
 
-### `client:deploy`, `client:deploy:nc`
+   This command will:
 
-Deploy the project build from `dist` folder to configured in `serverless.yml` AWS S3 bucket with or without confirmation.
+   - Build the frontend
+   - Upload it to S3
+   - Invalidate the CloudFront cache automatically
 
-### `client:build:deploy`, `client:build:deploy:nc`
+---
 
-Combination of `build` and `client:deploy` commands with or without confirmation.
+### 📋 Additional Scripts
 
-### `cloudfront:setup`
-
-Deploy configured in `serverless.yml` stack via CloudFormation.
-
-### `cloudfront:domainInfo`
-
-Display cloudfront domain information in console.
-
-### `cloudfront:invalidateCache`
-
-Invalidate cloudfront cache.
-
-### `cloudfront:build:deploy`, `cloudfront:build:deploy:nc`
-
-Combination of `client:build:deploy` and `cloudfront:invalidateCache` commands with or without confirmation.
-
-### `cloudfront:update:build:deploy`, `cloudfront:update:build:deploy:nc`
-
-Combination of `cloudfront:setup` and `cloudfront:build:deploy` commands with or without confirmation.
-
-### `serverless:remove`
-
-Remove an entire stack configured in `serverless.yml` via CloudFormation.
+- `npm run build` – Build the frontend and infrastructure code only
+- `npm run synth` – Synthesize the CloudFormation template
+- `npm run destroy` – Remove the deployed stack from AWS
