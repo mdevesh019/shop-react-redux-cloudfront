@@ -8,12 +8,10 @@ import Box from "@mui/material/Box";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/" underline="hover">
-        My Store
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
+      <div className="container">
+        © CloudX — AWS Practitioner for JS • Module 2 • Task 2.1{" "}
+        <span className="creator">Devesh Majithiya</span>
+      </div>
     </Typography>
   );
 }
